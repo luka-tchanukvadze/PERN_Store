@@ -5,7 +5,6 @@ import { useThemeStore } from "../store/useThemeStore";
 
 function Navbar() {
   const { pathname } = useLocation();
-  console.log(pathname);
   const isHomePage = pathname === "/";
 
   const { theme, setTheme } = useThemeStore();

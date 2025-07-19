@@ -1,8 +1,10 @@
 import { PaletteIcon } from "lucide-react";
 import { THEMES } from "../constants";
+import { useThemeStore } from "../store/useThemeStore";
 
 function ThemeSelector() {
-  const theme = "forest";
+  const { theme, setTheme } = useThemeStore();
+  console.log(theme);
 
   return (
     <div className="dropdown dropdown-end">
@@ -26,6 +28,7 @@ function ThemeSelector() {
                 : "hover:bg-base-content/5"
             }
           `}
+            onClick={() => setTheme(themeOption.name)}
           >
             <PaletteIcon className="size-4" />
             <span className="text-sm font-medium">{themeOption.label}</span>
