@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useProductStore } from "../store/useProductStore";
 import { PlusCircleIcon, RefreshCcwIcon } from "lucide-react";
+import ProductCard from "../components/ProductCard";
 
 function HomePage() {
   const { products, loading, error, fetchProducts } = useProductStore();
@@ -9,7 +10,7 @@ function HomePage() {
     fetchProducts();
   }, [fetchProducts]);
 
-  console.log(products);
+  console.log("good", products);
 
   return (
     <>
@@ -33,9 +34,9 @@ function HomePage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((product) => {
-              <ProductCard key={product.id} product={product} />;
-            })}
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
           </div>
         )}
       </main>
