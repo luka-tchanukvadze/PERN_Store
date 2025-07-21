@@ -34,6 +34,7 @@ export const useProductStore = create((set, get) => ({
       }));
     } catch (error) {
       console.log("Error in deleteProduct function", error);
+      toast;
     }
   },
 }));
