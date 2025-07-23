@@ -32,6 +32,8 @@ export const useProductStore = create((set, get) => ({
       get().resetForm();
       toast.success("Product added succesfully");
     } catch (error) {
+      console.log("error in addproduct function", error);
+      toast.error("Something went wrong");
     } finally {
       set({ loading: false });
     }
