@@ -18,7 +18,7 @@ export const useProductStore = create((set, get) => ({
     image: "",
   },
 
-  setFormaData: (formData) => set({ formData }),
+  setFormData: (formData) => set({ formData }),
   resetForm: () => set({ formData: { name: "", price: "", image: "" } }),
 
   addProduct: async (e) => {
@@ -31,7 +31,7 @@ export const useProductStore = create((set, get) => ({
       await get().fetchProducts();
       get().resetForm();
       toast.success("Product added succesfully");
-      // TODO close the modal
+      document.getElementById("add_product_modal").close();
     } catch (error) {
       console.log("error in addproduct function", error);
       toast.error("Something went wrong");
