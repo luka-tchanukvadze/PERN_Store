@@ -3,6 +3,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
 
 import productRotes from "./routes/productRoutes.js";
 import { sql } from "./config/db.js";
